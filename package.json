@@ -1,0 +1,31 @@
+{
+  "name": "serie-a-standings",
+  "version": "1.0.0",
+  "description": "A sample app that demonstrate how to consume football-data RESTful API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ammezie/serie-a-standings.git"
+  },
+  "keywords": [
+    "football-data",
+    "restful",
+    "api",
+    "nodejs"
+  ],
+  "author": "Chimezie Enyinnaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ammezie/serie-a-standings/issues"
+  },
+  "homepage": "https://github.com/ammezie/serie-a-standings#readme",
+  "dependencies": {
+    "handlebars": "^4.0.6",
+    "hapi": "^16.0.2",
+    "request": "^2.79.0",
+    "vision": "^4.1.1"
+  }
+}
