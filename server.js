@@ -12,6 +12,7 @@ server.connection({
 	port: 3000
 });
 
+// Register vision for our views
 server.register(Vision, (err) => {
 	server.views({
 		engines: {
@@ -39,13 +40,43 @@ server.route({
 });
 
 // Show a particular team
-// server.route({
-// 	method: 'GET',
-// 	path: '',
-// 	handler: function () {
+server.route({
+	method: 'GET',
+	path: '/teams/{id}',
+	handler: function (request, reply) {
+		let teamID = encodeURIComponent(request.params.id);
+		var fixtures;
 
-// 	}
-// });
+		Request.get('http://api.football-data.org/v1/teams/' + teamID, function (error, response, body) {
+			if (error) {
+				throw error;
+			}
+
+			Request.get('http://api.football-data.org/v1/teams/' + teamID + '/fixtures', function (error, response, body) {
+				if (error) {
+					throw error;
+				}
+
+				fixtures = JSON.parse(body);
+
+				// if (data.status === "SCHEDULED") {
+					
+				// 	console.log(data);
+				// }
+			});
+
+			var result = JSON.parse(body);
+
+			// reply.view('team', { result: result, fixtures: fixtures });
+			console.log(fixtures);
+		});
+	}
+});
+
+// A simple helper function that extracts team ID from team URL
+Handlebars.registerHelper('teamID', function (teamUrl) {
+	return teamUrl.slice(38);
+});
 
 server.start((err) => {
 	if (err) {
@@ -53,4 +84,4 @@ server.start((err) => {
 	}
 
 	console.log(`Server running at: ${server.info.uri}`);
-})
+});

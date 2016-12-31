@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+	<title>{{ result.name }}</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="section columns">
+			<div class="column is-8 is-offset-2">
+				<h2 class="title has-text-centered">
+			  		{{ result.name }}
+			  	</h2>
+
+			  	<div class="box">
+					<article class="media">
+				    	<div class="media-left">
+				      		<figure class="image is-64x64">
+				        		<img src="{{ result.crestUrl }}" alt="Team Logo">
+				      		</figure>
+				    	</div>
+				    	<div class="media-content">
+					      	<div class="content">
+					      		<aside class="menu">
+					      			<p class="menu-label">Basic Information</p>
+
+									<ul class="menu-list">
+						        		<li>
+						        			<strong>Name:</strong> {{ result.name }}
+						        		</li>
+						        		<li>
+						        			<strong>Code:</strong> {{ result.code }}
+						        		</li>
+						        		<li>
+						        			<strong>Short Name:</strong> {{ result.shortName }}
+						        		</li>
+						        		<li>
+						        			<strong>Square Market Value:</strong> {{ result.squadMarketValue }}
+						        		</li>
+						        	</ul>
+					      		</aside>
+					      	</div>
+				    	</div>
+				    	<div class="media-right">
+							<a href="/" class="button">Home</a>
+						</div>
+				  	</article>
+				</div>
+
+				<div class="box">
+					<h2 class="subtitle has-text-centered">Fixtures</h2>
+					
+					<div class="content">
+						{{ fixtures }}
+					</div>
+						
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
