@@ -23,11 +23,14 @@
 				    <tr>
 				      <th width="10px">#</th>
 				      <th>Team</th>
-				      <th width="100px">P</th>
-				      <th width="100px">F</th>
-				      <th width="100px">A</th>
-				      <th width="100px">GD</th>
-				      <th width="100px">Pts</th>
+				      <th>P</th>
+				      <th>W</th>
+				      <th>D</th>
+				      <th>L</th>
+				      <th>F</th>
+				      <th>A</th>
+				      <th>GD</th>
+				      <th>Pts</th>
 				    </tr>
 				</thead>
 				<tbody>
@@ -35,12 +38,21 @@
 					<tr>
 				    	<td>{{ position }}</td>
 				      	<td>
-				      		<a href="#">
+				      		<a href="{{ _links.team.href }}">
 				      			{{ teamName }}
 				      		</a>
 				      	</td>
 				      	<td>
 				      		{{ playedGames }}
+				      	</td>
+				      	<td>
+				      		{{ wins }}
+				      	</td>
+				      	<td>
+				      		{{ draws }}
+				      	</td>
+				      	<td>
+				      		{{ losses }}
 				      	</td>
 				      	<td>
 				      		{{ goals }}
