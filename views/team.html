@@ -8,6 +8,12 @@
 	<title>{{ result.name }}</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
+
+	<style>
+		li {
+			list-style: none;
+		}
+	</style>
 </head>
 <body>
 
@@ -54,10 +60,18 @@
 				</div>
 
 				<div class="box">
-					<h2 class="subtitle has-text-centered">Fixtures</h2>
+					<h2 class="title has-text-centered">Fixtures</h2>
 					
-					<div class="content">
-						{{ fixtures }}
+					<div class="content has-text-centered">
+						<ul>
+						{{#each fixtures}}
+							<li>
+								<strong>{{ homeTeamName }}</strong>
+								 vs 
+								<strong>{{ awayTeamName }}</strong>
+							</li>
+						{{/each}}
+						</ul>
 					</div>
 						
 				</div>
