@@ -4,7 +4,7 @@
   "description": "A sample app that demonstrates how to consume football-data RESTful API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    
   },
   "repository": {
     "type": "git",
