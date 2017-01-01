@@ -25,6 +25,8 @@
   "dependencies": {
     "handlebars": "^4.0.6",
     "hapi": "^16.0.2",
+    "lodash.filter": "^4.6.0",
+    "lodash.take": "^4.1.1",
     "request": "^2.79.0",
     "vision": "^4.1.1"
   }
