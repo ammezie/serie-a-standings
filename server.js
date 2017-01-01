@@ -48,14 +48,14 @@ server.route({
 	handler: function (request, reply) {
 		const teamID = encodeURIComponent(request.params.id);
 
-		Request.get('http://api.football-data.org/v1/teams/' + teamID, function (error, response, body) {
+		Request.get(`http://api.football-data.org/v1/teams/${teamID}`, function (error, response, body) {
 			if (error) {
 				throw error;
 			}
 
 			const result = JSON.parse(body);
 
-			Request.get('http://api.football-data.org/v1/teams/' + teamID + '/fixtures', function (error, response, body) {
+			Request.get(`http://api.football-data.org/v1/teams/${teamID}/fixtures`, function (error, response, body) {
 				if (error) {
 					throw error;
 				}
