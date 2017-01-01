@@ -25,19 +25,12 @@ server.register(Vision, (err) => {
 	});
 });
 
-// Custom headers
-const options = {
-	headers: {
-		'X-Auth-Token': 'b4cef398d42f42738085250cebab40da'
-	}
-}
-
 // Show teams standings
 server.route({
 	method: 'GET',
 	path: '/',
 	handler: function (request, reply) {
-		Request.get('http://api.football-data.org/v1/competitions/438/leagueTable', options, function (error, response, body) {
+		Request.get('http://api.football-data.org/v1/competitions/438/leagueTable', function (error, response, body) {
 			if (error) {
 				throw error;
 			}
@@ -55,14 +48,14 @@ server.route({
 	handler: function (request, reply) {
 		const teamID = encodeURIComponent(request.params.id);
 
-		Request.get('http://api.football-data.org/v1/teams/' + teamID, options, function (error, response, body) {
+		Request.get('http://api.football-data.org/v1/teams/' + teamID, function (error, response, body) {
 			if (error) {
 				throw error;
 			}
 
 			const result = JSON.parse(body);
 
-			Request.get('http://api.football-data.org/v1/teams/' + teamID + '/fixtures', options, function (error, response, body) {
+			Request.get('http://api.football-data.org/v1/teams/' + teamID + '/fixtures', function (error, response, body) {
 				if (error) {
 					throw error;
 				}
